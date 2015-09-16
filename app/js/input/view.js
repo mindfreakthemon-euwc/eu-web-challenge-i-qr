@@ -4,19 +4,12 @@ import BaseView from 'base/view';
 import PreorderedTree from 'preordered/tree'
 import PreorderedView from 'preordered/view'
 
-const INPUT_DEFAULT_VALUE =  `[
-{ "name": "Cars", "left": 1, "right": 18 },
-{ "name": "Fast", "left": 2, "right": 11 },
-{ "name": "Red", "left": 3, "right": 6 },
-{ "name": "Ferrari", "left": 4, "right": 5 },
-{ "name": "Yellow", "left": 7, "right": 10 },
-{ "name": "Lamborghini", "left": 8, "right": 9 },
-{ "name": "Slow", "left": 12, "right": 17 },
-{ "name": "Lada", "left": 13, "right": 14 },
-{ "name": "Polonez", "left": 15, "right": 16 }
-]`;
-
 export default class InputView extends BaseView {
+
+	/**
+	 * General view class
+	 * @param parent
+	 */
 	constructor(parent) {
 		super(parent);
 
@@ -24,13 +17,13 @@ export default class InputView extends BaseView {
 		this._svgContainer = this.parent.querySelector('#svg-container');
 		this._error = this.parent.querySelector('.error-message');
 
-		this._input.value = INPUT_DEFAULT_VALUE;
-
-		this._convertInputValue();
-
 		this._input.addEventListener('keyup', _.debounce(this._keyupHandler.bind(this), 100));
 	}
 
+	/**
+	 * Display a tree represented by preordered list
+	 * @param list
+	 */
 	displayTree(list) {
 		let tree = new PreorderedTree(list),
 			view = new PreorderedView(tree, this._svgContainer);
@@ -38,20 +31,27 @@ export default class InputView extends BaseView {
 		view.render();
 	}
 
+	/**
+	 * Display an error message
+	 * @param message
+	 */
 	displayError(message) {
 		this._error.innerText = message;
 		this._error.classList.add('shown');
 	}
 
-	/* private: */
-
-	_keyupHandler(e) {
-		this._error.classList.remove('shown');
-
-		this._convertInputValue();
+	/**
+	 * Set input value to a given
+	 * @param value
+	 */
+	setInputValue(value) {
+		this._input.value = value;
 	}
 
-	_convertInputValue() {
+	/**
+	 * Convert input value to a list and display it
+	 */
+	convertInputValue() {
 		var value = this._input.value,
 			list = [];
 
@@ -76,5 +76,17 @@ export default class InputView extends BaseView {
 		}
 
 		this.displayTree(list);
+	}
+
+	/* private: */
+
+	/**
+	 * Keyup event handler for the textarea input
+	 * @private
+	 */
+	_keyupHandler() {
+		this._error.classList.remove('shown');
+
+		this.convertInputValue();
 	}
 }

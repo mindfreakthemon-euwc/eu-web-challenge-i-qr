@@ -25,7 +25,7 @@ export default class PreorderedTree {
 			index = 0,
 			lock = false;
 
-		_.each(this.list, (row) => {
+		_.each(this._list, (row) => {
 			if (stack.length) {
 				while (stack[stack.length - 1] < row.right) {
 					stack.pop();
@@ -58,17 +58,9 @@ export default class PreorderedTree {
 	 * @returns {PreorderedNode}
 	 */
 	get root() {
-		return _.findWhere(this.list, {
+		return _.findWhere(this._list, {
 			left: 1
 		});
-	}
-
-	/**
-	 * Returns list of nodes
-	 * @returns {PreorderedNode[]}
-	 */
-	get list() {
-		return this._list;
 	}
 
 	/* static */

@@ -19,4 +19,4 @@ html
 
 		script(src='lib/requirejs/require.js')
 		script.
-			require({ baseUrl: '/js', paths: { underscore: '../lib/underscore/underscore-min'	} }, ['main']);
+			require({ baseUrl: location.pathname + 'js', paths: { underscore: '../lib/underscore/underscore-min'	} }, ['main']);
