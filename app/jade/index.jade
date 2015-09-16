@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		title EUWC
+		link(rel='stylesheet', href='css/style.css')
+	body
+		#viewport
+			.column
+				h1 Tree
+				hr
+				#svg-container
+
+			.column
+				h1 Input
+				hr
+				.error-message ERROR
+				textarea
+				small Note: Your changes will apply on the fly.
+
+		script(src='lib/requirejs/require.js')
+		script.
+			require({ baseUrl: '/js', paths: { underscore: '../lib/underscore/underscore-min'	} }, ['main']);

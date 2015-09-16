@@ -1,0 +1,24 @@
+{
+  "name": "eu-web-challenge-i-qr",
+  "version": "0.0.1",
+  "description": "EUWC - Qualifying round",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "css-sprite": "^0.9.8",
+    "del": "^2.0.2",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.2.1",
+    "gulp-changed": "^1.2.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-connect": "^2.2.0",
+    "gulp-insert": "^0.4.0",
+    "gulp-jade": "^1.0.0",
+    "gulp-jshint": "^1.10.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-stylus": "^2.0.1",
+    "require-dir": "^0.3.0"
+  }
+}

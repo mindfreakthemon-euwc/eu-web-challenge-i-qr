@@ -1,0 +1,1 @@
+Please, start http server in public folder.

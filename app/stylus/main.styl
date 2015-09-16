@@ -1,0 +1,68 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+
+	font-size: 1em;
+}
+
+* {
+	font-family: Helvetica, Arial, sans-serif;
+	box-sizing: border-box;
+}
+
+#viewport {
+	display: flex;
+	padding: 2em;
+}
+
+.column {
+	flex: 1;
+}
+
+textarea {
+	width: 100%;
+	min-height: 15em;
+
+	resize: vertical;
+
+	font-size: 0.8em;
+	line-height: 1.4em;
+	white-space: nowrap;
+}
+
+.error-message {
+	background: #f00;
+	color: #fff;
+	border-radius: 5px;
+
+	margin: 1em 0;
+	padding: 0.5em;
+
+	display: none;
+
+	&.shown {
+		display: block;
+	}
+}
+
+.no-select {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.tree {
+	font-weight: bold;
+	font-size: 1em;
+	fill: #000;
+}
+
+.toggle {
+	cursor: pointer;
+	fill: #f00;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ua-web-challenge-viii-qr",
+  "version": "0.0.1",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.17",
+    "underscore": "~1.8.3"
+  }
+}
